@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue@2.5.9/dist/vue.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="hello">
+        <h1>{{ msg }}</h1>
+        <br />
+
+        <span>Deutschland Individuell - Alpenregion Tegernsee-Schliersee</span>
+        <div id="drawing-table" max-day="19" max-month="8" max-year="2018" callback="printValues"></div>
+
+
+        <h2>result:</h2>
+        <span id="v1"></span>
+        <br>
+        <span id="v2"></span>
+    </div>
+</body>
+</html>
+
+<style>
+    .available {
+
+    }
+    .start-date {
+        background-color: #357ebd;
+        border-color:transparent;
+        color: #fff;
+    }
+    .end-date {
+        background-color: #357ebd;
+        border-color:transparent;
+        color: #fff;
+    }
+    .in-range {
+        border-color: transparent;
+        background-color: #ebf4f8;
+        color: #000;
+    }
+    .off-date {
+        background-color: #fff;
+        border-color: transparent;
+        color: #999;
+    }
+    td {
+        text-align: center;
+    }
+</style>
+
+<script>
+
+    asireisen = {
+        start: '05-05-2018', // The range of dates for the trip 2DEMUC001W
+        end: '20-10-2018',
+        duration: 5, // The duration (in days) of the whole trip
+        bookableDates: [ // Some saturdays dates printed on the SQL example
+            '05-05-2018',
+            '05-12-2018',
+            '05-19-2018',
+            '05-26-2018',
+            '06-02-2018',
+            '06-09-2018',
+            '06-16-2018',
+            '06-23-2018',
+        ]
+    };
+
+    function printValues(v1, v2) {
+        // The callback to get the calendar results
+        // V1 = start-date
+        // V2 = end-date
+        document.getElementById('v1').innerText = v1;
+        document.getElementById('v2').innerText = v2;
+    }
+
+    new Vue({
+        el: '#hello',
+        data: {
+            msg: 'Date Range Picker',
+            monthDays: []
+        }
+    });
+</script>
+<script src="daterangepicker.js" type="text/javascript"></script>
