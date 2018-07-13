@@ -16,8 +16,6 @@ if (!String.prototype.format) {
  *
  * */
 
-let children = [];
-
 let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May',
     'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -37,7 +35,6 @@ let min_day = ~~(start[0]);
 let min_month = cm;
 let max_day = ~~(end[0]);
 let max_month = ~~(end[1]);
-let max_year = ~~(end[2]);
 let year = ~~(start[2]);
 let sel1 = null;
 let sel2 = null;
@@ -92,13 +89,6 @@ loadMonth(cm);
 function loadMonth(cm) {
     refreshPaint();
     elem = document.getElementById('drawing-table');
-    /*children[ocm] = elem.firstChild;
-    elem.removeChild(elem.firstChild);
-
-    if (children[cm]) {
-        elem.appendChild(children[cm]);
-        return
-    }*/
 
     draw = html;
     days = new Date(year, cm, 0).getDate();
@@ -134,10 +124,6 @@ function loadMonth(cm) {
     }
     draw += '</table>';
 
-
-    /*el = document.createElement('div');
-    el.setAttribute('id', 'table');
-    elem.appendChild(el);*/
     elem.innerHTML = draw
     document.getElementById('month').innerText = '{0} {1}'.format(months[cm-1], year);
 

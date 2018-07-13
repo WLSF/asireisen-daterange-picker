@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="https://unpkg.com/vue@2.5.9/dist/vue.js" type="text/javascript"></script>
+    <title>Date Range Picker</title>
 </head>
 <body>
     <div id="hello">
-        <h1>{{ msg }}</h1>
+        <h1>Date Range Picker</h1>
         <br />
 
         <span>Deutschland Individuell - Alpenregion Tegernsee-Schliersee - 5 Tages</span>
@@ -76,13 +75,5 @@
         document.getElementById('v1').innerText = v1;
         document.getElementById('v2').innerText = v2;
     }
-
-    new Vue({
-        el: '#hello',
-        data: {
-            msg: 'Date Range Picker',
-            monthDays: []
-        }
-    });
 </script>
 <script src="daterangepicker.js" type="text/javascript"></script>
