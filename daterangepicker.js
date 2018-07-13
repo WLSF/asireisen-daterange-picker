@@ -29,12 +29,12 @@ let duration = asireisen.duration;
 let bookable = asireisen.bookableDates;
 
 let elem = document.getElementById('drawing-table');
-let cm = ~~(start[1]);
+let cm = ~~(start[0]);
 let ocm = null;
-let min_day = ~~(start[0]);
+let min_day = ~~(start[1]);
 let min_month = cm;
-let max_day = ~~(end[0]);
-let max_month = ~~(end[1]);
+let max_day = ~~(end[1]);
+let max_month = ~~(end[0]);
 let year = ~~(start[2]);
 let sel1 = null;
 let sel2 = null;
